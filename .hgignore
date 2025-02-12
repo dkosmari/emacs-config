@@ -1,0 +1,14 @@
+syntax: glob
+
+*~
+ede-projects.el
+eshell
+games
+irony
+request
+semanticdb
+tramp
+transient
+var
+auto-save-list
+elpa

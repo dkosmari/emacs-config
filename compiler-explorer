@@ -1,0 +1,6 @@
+
+((:lang-name "C++" :compiler "g121" :libs nil :args "-std=c++20 -Og" :exe-args "" :input "" :source "// Type your code here, or load an example.
+int square(int num) {
+    return num * num + 5;
+}
+"))
