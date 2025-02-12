@@ -274,6 +274,11 @@
 
 ;; MANUAL CONFIGS BELOW THIS LINE
 
+;; Auto install/update packages.
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install-selected-packages)
+
 
 ;; Extra modes to attach whitespace-cleanup-mode:
 ;; - glsl
