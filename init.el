@@ -253,6 +253,7 @@
  '(tab-always-indent 'complete)
  '(tool-bar-style 'text-image-horiz)
  '(unicode-fonts-block-font-mapping '(("Letterlike Symbols" ("FreeSans"))))
+ '(vterm-max-scrollback 8000)
  '(x-stretch-cursor t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
