@@ -59,9 +59,9 @@
  '(auto-insert-directory "~/.emacs.d/insert/")
  '(buffers-menu-show-status nil)
  '(c++-font-lock-extra-types
-   '("auto" "bit_vector" "const_iterator" "const_reference" "const_reverse_iterator" "(c|w|s|ws)match" "deque" "FILE" "forward_list" "fstream" "hash" "hash_map" "hash_multimap" "hash_multiset" "hash_set" "ifstream" "ios" "istream" "istreambuf" "istrstream" "iterator" "jmp_buf" "lconv" "list" "map" "multimap" "multiset" "ofstream" "ostream" "ostreambuf" "ostrstream" "priority_queue" "queue" "reference" "reverse_iterator" "set" "span" "stack" "string" "strstream" "strstreambuf" "\\sw+_t" "tm" "type_info" "va_list" "vector" "w?regex"))
+   '("auto" "bit_vector" "const_iterator" "const_reference" "const_reverse_iterator" "(c|w|s|ws)match" "deque" "FILE" "forward_list" "fstream" "hash" "hash_map" "hash_multimap" "hash_multiset" "hash_set" "ifstream" "ios" "istream" "istreambuf" "istrstream" "iterator" "jmp_buf" "lconv" "list" "map" "multimap" "multiset" "ofstream" "ostream" "ostreambuf" "ostrstream" "priority_queue" "queue" "reference" "reverse_iterator" "set" "span" "stack" "string" "strstream" "strstreambuf" "\\sw+_t" "tm" "type_info" "va_list" "vector" "w?regex" "atomic_(bool|char|schar|uchar|short|ushort|int|uint|long|ulong|llong|ullong|char8_t|char16_t|char32_t|wchar_t|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|intptr_t|uintptr_t|size_t|ptrdiff_t|intmax_t|uintmax_t)"))
  '(c++-mode-hook
-   '(irony-mode company-mode modern-c++-font-lock-mode
+   '(irony-mode company-mode modern-c++-font-lock-mode hl-printf-mode
                 (lambda nil
                   (local-set-key
                    (kbd "<f6>")
@@ -100,9 +100,9 @@
      (member-init-intro after)
      (inher-intro)))
  '(c-mode-common-hook
-   '(whitespace-cleanup-mode c-toggle-hungry-state c-toggle-auto-newline highlight-numbers-mode highlight-operators-mode highlight-doxygen-mode))
+   '(whitespace-cleanup-mode c-toggle-hungry-state c-toggle-auto-newline highlight-numbers-mode highlight-operators-mode highlight-doxygen-mode hl-todo-mode))
  '(c-mode-hook
-   '(irony-mode company-mode
+   '(irony-mode company-mode hl-printf-mode
                 (lambda nil
                   (local-set-key
                    (kbd "<f6>")
@@ -204,7 +204,7 @@
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(rust-mode org-chef zoom-window company-irony-c-headers company-irony gnu-elpa-keyring-update license-templates license-snippets vala-mode totp-auth firefox-javascript-repl json-mode js2-mode js-auto-format-mode meson-mode unicode-math-input unicode-escape gcmh dpkg-dev-el dockerfile-mode docker-compose-mode yaml-mode markdown-preview-eww markdown-mode exec-path-from-shell systemd multi-vterm vterm rmsbolt compiler-explorer org-auto-tangle unicode-fonts use-package ini-mode po-mode highlight-parentheses column-enforce-mode highlight-operators highlight-indent-guides auto-highlight-symbol vc-hgcmd lua-mode chess ecb ggtags udev-mode ucs-utils company-glsl glsl-mode company-auctex python-mode mips-mode lisp-extra-font-lock ssh-config-mode modern-cpp-font-lock latex-pretty-symbols latex-unicode-math-mode latex-math-preview fillcode filladapt rebox2 paradox demangle-mode disaster swiper flycheck-clang-tidy company cff highlight-numbers highlight-doxygen whitespace-cleanup-mode))
+   '(hl-todo hl-printf clang-format rust-mode org-chef zoom-window company-irony-c-headers company-irony gnu-elpa-keyring-update license-templates license-snippets vala-mode totp-auth firefox-javascript-repl json-mode js2-mode js-auto-format-mode meson-mode unicode-math-input unicode-escape gcmh dpkg-dev-el dockerfile-mode docker-compose-mode yaml-mode markdown-preview-eww markdown-mode exec-path-from-shell systemd multi-vterm vterm rmsbolt compiler-explorer org-auto-tangle unicode-fonts use-package ini-mode po-mode highlight-parentheses column-enforce-mode highlight-operators highlight-indent-guides auto-highlight-symbol vc-hgcmd lua-mode chess ecb ggtags udev-mode ucs-utils company-glsl glsl-mode company-auctex python-mode mips-mode lisp-extra-font-lock ssh-config-mode modern-cpp-font-lock latex-pretty-symbols latex-unicode-math-mode latex-math-preview fillcode filladapt rebox2 paradox demangle-mode disaster swiper flycheck-clang-tidy company cff highlight-numbers highlight-doxygen whitespace-cleanup-mode))
  '(paradox-github-token t)
  '(prog-mode-hook '(display-line-numbers-mode))
  '(python-mode-hook
@@ -398,7 +398,11 @@
      ))
 
 
-;; Set up exec-path-from-sell package.
+;; Make compilation buffers understand ANSI escape sequences.
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
+
+
+;; Set up exec-path-from-shell package.
 (when (daemonp)
   (exec-path-from-shell-initialize))
 
