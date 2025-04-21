@@ -360,6 +360,11 @@
   (interactive)
   (insert-file-contents "~/.emacs.d/insert/spdx-gpl.h"))
 
+(defun insert-spdx-zlib ()
+  "Insert SPDX-License-Identifier header for zlib license."
+  (interactive)
+  (insert-file-contents "~/.emacs.d/insert/spdx-zlib.h"))
+
 
 ;; Convenience functions to set up current directory and default compile command.
 ;; This allows for quick compilation with <F7>.
