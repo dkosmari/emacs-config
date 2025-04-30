@@ -325,16 +325,6 @@
 
 ;; Functions to insert text from templates.
 
-(defun insert-gpl-c ()
-  "Insert GPLv3 into a C/C++ source file."
-  (interactive)
-  (insert-file-contents "~/.emacs.d/insert/gpl-header.h"))
-
-(defun insert-company ()
-  "Insert compile_flags.txt rule in a Makefile."
-  (interactive)
-  (insert-file-contents "~/.emacs.d/insert/company.makefile"))
-
 (defun insert-ac-config ()
   "Insert common autoconf config macros."
   (interactive)
@@ -345,10 +335,25 @@
   (interactive)
   (insert-file-contents "~/.emacs.d/insert/ac-cpp.ac"))
 
+(defun insert-company ()
+  "Insert compile_flags.txt rule in a Makefile."
+  (interactive)
+  (insert-file-contents "~/.emacs.d/insert/company.makefile"))
+
+(defun insert-gpl-c ()
+  "Insert GPLv3 into a C/C++ source file."
+  (interactive)
+  (insert-file-contents "~/.emacs.d/insert/gpl-header.h"))
+
 (defun insert-iostream ()
   "Insert C++ iostream using declarations for cout, clog, cerr, endl."
   (interactive)
   (insert-file-contents "~/.emacs.d/insert/iostream.cpp"))
+
+(defun insert-sdl-version-atleast ()
+  "Insert SDL_VERSION_ATLEAST() macro."
+  (interactive)
+  (insert-file-contents "~/.emacs.d/insert/sdl-version-atleast.h"))
 
 (defun insert-spdx-mit ()
   "Insert SPDX-License-Identifier header for MIT license."
