@@ -355,6 +355,11 @@
   (interactive)
   (insert-file-contents "~/.emacs.d/insert/sdl-version-atleast.h"))
 
+(defun insert-spdx-apache ()
+  "Insert SPDX-License-Identifier header for Apache-2.0 license."
+  (interactive)
+  (insert-file-contents "~/.emacs.d/insert/spdx-apache.h"))
+
 (defun insert-spdx-lgpl ()
   "Insert SPDX-License-Identifier header for LGPLv3 license."
   (interactive)
