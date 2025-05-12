@@ -1,3 +1,3 @@
 #if SDL_VERSION_ATLEAST(, , )
 
-#endif
+#endif // SDL_VERSION_ATLEAST(, , )
