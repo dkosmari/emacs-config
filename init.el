@@ -145,6 +145,7 @@
  '(display-line-numbers-grow-only t)
  '(ecb-options-version "2.50")
  '(ediff-use-faces nil)
+ '(exec-path-from-shell-arguments nil)
  '(fast-but-imprecise-scrolling t)
  '(fill-column 90)
  '(fira-code-mode-disabled-ligatures
