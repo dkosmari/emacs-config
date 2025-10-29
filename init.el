@@ -118,8 +118,8 @@
      (topmost-intro-cont first c-lineup-topmost-intro-cont c-lineup-gnu-DEFUN-intro-cont)
      (inher-cont . c-lineup-multi-inher)
      (brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +)
-     (statement-case-open . 0)
-     (substatement-open . 0)
+     (statement-case-open . +)
+     (substatement-open . +)
      (case-label . +)
      (namespace-open . 0)))
  '(column-number-mode t)
@@ -205,7 +205,7 @@
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(hl-todo hl-printf clang-format rust-mode org-chef zoom-window company-irony-c-headers company-irony gnu-elpa-keyring-update license-templates license-snippets vala-mode totp-auth firefox-javascript-repl json-mode js2-mode js-auto-format-mode meson-mode unicode-math-input unicode-escape gcmh dpkg-dev-el dockerfile-mode docker-compose-mode yaml-mode markdown-preview-eww markdown-mode exec-path-from-shell systemd multi-vterm vterm rmsbolt compiler-explorer org-auto-tangle unicode-fonts use-package ini-mode po-mode highlight-parentheses column-enforce-mode highlight-operators highlight-indent-guides auto-highlight-symbol vc-hgcmd lua-mode chess ecb ggtags udev-mode ucs-utils company-glsl glsl-mode company-auctex python-mode mips-mode lisp-extra-font-lock ssh-config-mode modern-cpp-font-lock latex-pretty-symbols latex-unicode-math-mode latex-math-preview fillcode filladapt rebox2 paradox demangle-mode disaster swiper flycheck-clang-tidy company cff highlight-numbers highlight-doxygen whitespace-cleanup-mode))
+   '(editorconfig hl-todo hl-printf clang-format rust-mode org-chef zoom-window company-irony-c-headers company-irony gnu-elpa-keyring-update license-templates license-snippets vala-mode totp-auth firefox-javascript-repl json-mode js2-mode js-auto-format-mode meson-mode unicode-math-input unicode-escape gcmh dpkg-dev-el dockerfile-mode docker-compose-mode yaml-mode markdown-preview-eww markdown-mode exec-path-from-shell systemd multi-vterm vterm rmsbolt compiler-explorer org-auto-tangle unicode-fonts use-package ini-mode po-mode highlight-parentheses column-enforce-mode highlight-operators highlight-indent-guides auto-highlight-symbol vc-hgcmd lua-mode chess ecb ggtags udev-mode ucs-utils company-glsl glsl-mode company-auctex python-mode mips-mode lisp-extra-font-lock ssh-config-mode modern-cpp-font-lock latex-pretty-symbols latex-unicode-math-mode latex-math-preview fillcode filladapt rebox2 paradox demangle-mode disaster swiper flycheck-clang-tidy company cff highlight-numbers highlight-doxygen whitespace-cleanup-mode))
  '(paradox-github-token t)
  '(prog-mode-hook '(display-line-numbers-mode))
  '(python-mode-hook
@@ -427,3 +427,6 @@
 (when (daemonp)
   (exec-path-from-shell-initialize))
 
+
+;; Enable editorconfig
+(editorconfig-mode 1)
