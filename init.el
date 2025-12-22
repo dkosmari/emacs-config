@@ -278,8 +278,8 @@
 
 ;; Auto install/update packages.
 (unless package-archive-contents
-  (package-refresh-contents))
-(package-install-selected-packages t)
+  (package-refresh-contents)
+  (package-install-selected-packages t))
 
 
 ;; Extra modes to attach whitespace-cleanup-mode:
