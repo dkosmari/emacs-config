@@ -120,7 +120,7 @@
      (brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +)
      (statement-case-open . +)
      (substatement-open . +)
-     (case-label . +)
+     (case-label . 0)
      (namespace-open . 0)))
  '(column-number-mode t)
  '(company-backends
@@ -168,6 +168,7 @@
  '(irony-additional-clang-options '("-std=c++20"))
  '(irony-supported-major-modes '(c++-mode c-mode objc-mode))
  '(jit-lock-defer-time 0.2)
+ '(js-switch-indent-offset 4)
  '(line-number-display-limit 5000)
  '(makefile-mode-hook '((lambda nil (local-set-key (kbd "<f7>") 'compile))))
  '(menu-bar-mode nil)
@@ -221,32 +222,6 @@
  '(rmsbolt-asm-format "att")
  '(rmsbolt-automatic-recompile 'on-save)
  '(rmsbolt-command "g++ -std=c++20")
- '(safe-local-variable-values
-   '((c-file-offsets
-      (innamespace . 0)
-      (inextern-lang . 0))
-     (c-file-offsets
-      (innamespace . 0))
-     (encoding . utf-8)
-     (c-file-offsets
-      (block-close . 0)
-      (brace-list-close . 0)
-      (brace-list-entry . 0)
-      (brace-list-intro . +)
-      (case-label . 0)
-      (class-close . 0)
-      (defun-block-intro . +)
-      (defun-close . 0)
-      (defun-open . 0)
-      (else-clause . 0)
-      (inclass . +)
-      (label . 0)
-      (statement . 0)
-      (statement-block-intro . +)
-      (statement-case-intro . +)
-      (statement-cont . +)
-      (substatement . +)
-      (topmost-intro . 0))))
  '(scalable-fonts-allowed t)
  '(scroll-conservatively 101)
  '(scroll-margin 3)
@@ -278,8 +253,9 @@
 
 ;; Auto install/update packages.
 (unless package-archive-contents
-  (package-refresh-contents)
-  (package-install-selected-packages t))
+  (package-refresh-contents))
+;; Install the missing packages
+(package-install-selected-packages)
 
 
 ;; Extra modes to attach whitespace-cleanup-mode:
