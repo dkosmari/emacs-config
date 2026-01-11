@@ -120,8 +120,7 @@
      (brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +)
      (statement-case-open . +)
      (substatement-open . +)
-     (case-label . 0)
-     (namespace-open . 0)))
+     (case-label . +)))
  '(column-number-mode t)
  '(company-backends
    '(company-irony company-irony-c-headers company-glsl company-keywords))
