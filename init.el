@@ -191,6 +191,7 @@
      ("m" "Manual Cookbook" entry
       (file "~/org/recipes/cookbook.org")
       "* %^{Recipe title: }\12  :PROPERTIES:\12  :source-url:\12  :servings:\12  :prep-time:\12  :cook-time:\12  :ready-in:\12  :END:\12** Ingredients\12   %?\12** Directions\12\12" :empty-lines 2)))
+ '(org-export-with-sub-superscripts '{})
  '(org-hide-emphasis-markers t)
  '(org-hide-leading-stars t)
  '(org-html-html5-fancy t)
