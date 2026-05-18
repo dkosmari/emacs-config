@@ -113,14 +113,14 @@
                    'compile))))
  '(c-noise-macro-names '("ALWAYS_INLINE" "constexpr"))
  '(c-offsets-alist
-   '((inline-open . 0)
-     (func-decl-cont . +)
+   '((func-decl-cont . +)
      (topmost-intro-cont first c-lineup-topmost-intro-cont c-lineup-gnu-DEFUN-intro-cont)
      (inher-cont . c-lineup-multi-inher)
      (brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +)
      (statement-case-open . +)
      (substatement-open . +)
-     (case-label . +)))
+     (case-label . +)
+     (arglist-intro . +)))
  '(column-number-mode t)
  '(company-backends
    '(company-irony company-irony-c-headers company-glsl company-keywords))
@@ -446,6 +446,7 @@ so that you needn't enable it manually.
 
 ;; Hook dumb-jump
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+
 
 ;; Set up exec-path-from-shell package.
 (when (daemonp)
