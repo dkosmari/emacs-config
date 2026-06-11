@@ -237,6 +237,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-blue ((t (:background "royal blue" :foreground "royal blue"))))
+ '(ansi-color-bright-blue ((t (:background "dodger blue" :foreground "dodger blue"))))
  '(buffer-menu-buffer ((t nil)))
  '(highlight-operators-face ((t (:inherit font-lock-builtin-face :weight bold))))
  '(hl-line ((t nil)))
