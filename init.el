@@ -439,7 +439,9 @@ so that you needn't enable it manually.
 
 (define-minor-mode ansi-color-mode 
   "..."
-  nil nil nil
+  :global nil
+  :init-value nil
+  :lighter nil
   (ansi-color-apply-on-region 1 (buffer-size)))
 
 
