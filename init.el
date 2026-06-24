@@ -118,9 +118,10 @@
      (inher-cont . c-lineup-multi-inher)
      (brace-list-intro first c-lineup-2nd-brace-entry-in-arglist c-lineup-class-decl-init-+ +)
      (statement-case-open . +)
-     (substatement-open . +)
+     (substatement-open . 0)
      (case-label . +)
-     (arglist-intro . +)))
+     (arglist-intro . +)
+     (arglist-close . 0)))
  '(column-number-mode t)
  '(company-backends
    '(company-irony company-irony-c-headers company-glsl company-keywords))
