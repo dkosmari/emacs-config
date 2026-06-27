@@ -450,7 +450,7 @@ so that you needn't enable it manually.
 
 
 ;; Hook dumb-jump
-(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+;; (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 
 ;; Set up exec-path-from-shell package.
