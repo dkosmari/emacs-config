@@ -228,7 +228,7 @@
  '(scroll-conservatively 101)
  '(scroll-margin 3)
  '(sort-fold-case t)
- '(tab-always-indent 'complete)
+ '(tab-always-indent t)
  '(tool-bar-style 'text-image-horiz)
  '(unicode-fonts-block-font-mapping '(("Letterlike Symbols" ("FreeSans"))))
  '(vterm-max-scrollback 8000)
@@ -447,10 +447,6 @@ so that you needn't enable it manually.
 
 ;; Enable editorconfig
 (editorconfig-mode 1)
-
-
-;; Hook dumb-jump
-;; (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 
 ;; Set up exec-path-from-shell package.
