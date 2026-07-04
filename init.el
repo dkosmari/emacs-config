@@ -207,7 +207,7 @@
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(dumb-jump company-ctags journalctl-mode ansi editorconfig hl-todo hl-printf clang-format rust-mode org-chef zoom-window company-irony-c-headers company-irony gnu-elpa-keyring-update license-templates license-snippets vala-mode totp-auth firefox-javascript-repl json-mode js2-mode js-auto-format-mode meson-mode unicode-math-input unicode-escape gcmh dpkg-dev-el dockerfile-mode docker-compose-mode yaml-mode markdown-preview-eww markdown-mode exec-path-from-shell systemd multi-vterm vterm rmsbolt compiler-explorer org-auto-tangle unicode-fonts use-package ini-mode po-mode highlight-parentheses column-enforce-mode highlight-operators highlight-indent-guides auto-highlight-symbol vc-hgcmd lua-mode chess ecb ggtags udev-mode ucs-utils company-glsl glsl-mode company-auctex python-mode mips-mode lisp-extra-font-lock ssh-config-mode modern-cpp-font-lock latex-pretty-symbols latex-unicode-math-mode latex-math-preview fillcode filladapt rebox2 paradox demangle-mode disaster swiper flycheck-clang-tidy company cff highlight-numbers highlight-doxygen whitespace-cleanup-mode))
+   '(cmake-ide cmake-font-lock dumb-jump company-ctags journalctl-mode ansi editorconfig hl-todo hl-printf clang-format rust-mode org-chef zoom-window company-irony-c-headers company-irony gnu-elpa-keyring-update license-templates license-snippets vala-mode totp-auth firefox-javascript-repl json-mode js2-mode js-auto-format-mode meson-mode unicode-math-input unicode-escape gcmh dpkg-dev-el dockerfile-mode docker-compose-mode yaml-mode markdown-preview-eww markdown-mode exec-path-from-shell systemd multi-vterm vterm rmsbolt compiler-explorer org-auto-tangle unicode-fonts use-package ini-mode po-mode highlight-parentheses column-enforce-mode highlight-operators highlight-indent-guides auto-highlight-symbol vc-hgcmd lua-mode chess ecb ggtags udev-mode ucs-utils company-glsl glsl-mode company-auctex python-mode mips-mode lisp-extra-font-lock ssh-config-mode modern-cpp-font-lock latex-pretty-symbols latex-unicode-math-mode latex-math-preview fillcode filladapt rebox2 paradox demangle-mode disaster swiper flycheck-clang-tidy company cff highlight-numbers highlight-doxygen whitespace-cleanup-mode))
  '(paradox-github-token t)
  '(prog-mode-hook '(display-line-numbers-mode))
  '(python-mode-hook
@@ -224,6 +224,7 @@
  '(rmsbolt-automatic-recompile 'on-save)
  '(rmsbolt-command "g++ -std=c++20")
  '(safe-local-variable-values '((c-file-offsets (innamespace . 0) (inextern-lang . 0))))
+ '(save-place-file "/home/danielko/.emacs.d/emacs-places")
  '(scalable-fonts-allowed t)
  '(scroll-conservatively 101)
  '(scroll-margin 3)
@@ -248,11 +249,6 @@
  '(term-color-blue ((t (:background "blue2" :foreground "#5080ff")))))
 
 
-;; Enable upcase/downcase functions.
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-
-
 ;; MANUAL CONFIGS BELOW THIS LINE
 
 ;; Auto install/update packages.
@@ -260,6 +256,11 @@
   (package-refresh-contents))
 ;; Install the missing packages
 (package-install-selected-packages)
+
+
+;; Enable upcase/downcase functions.
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 
 ;; Extra modes to attach whitespace-cleanup-mode:
@@ -452,5 +453,4 @@ so that you needn't enable it manually.
 ;; Set up exec-path-from-shell package.
 (when (daemonp)
   (exec-path-from-shell-initialize))
-
 
