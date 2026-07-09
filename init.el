@@ -131,6 +131,7 @@
    '(company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend))
  '(compilation-always-kill t)
  '(compilation-ask-about-save nil)
+ '(compilation-auto-jump-to-first-error 'if-location-known)
  '(compilation-mode-hook '((lambda nil (local-set-key (kbd "<f7>") 'compile))))
  '(compilation-read-command nil)
  '(compilation-scroll-output 'first-error)

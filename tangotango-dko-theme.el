@@ -60,7 +60,8 @@
  '(font-lock-regexp-grouping-backslash ((t (:foreground "#888a85"))))
  '(hl-line ((t (:extend t :background "#203030"))))
  '(line-number ((t (:height 0.9 :inherit font-lock-comment-face))))
+ '(rpm-spec-tag-face ((t (:foreground "deep sky blue"))))
  '(default ((t (:inherit nil :stipple nil :background "gray10" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
- '(rpm-spec-tag-face ((t (:foreground "deep sky blue")))))
+ '(error ((t (:foreground "red" :weight bold)))))
 
 (provide-theme 'tangotango-dko)
