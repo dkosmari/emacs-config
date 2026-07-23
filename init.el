@@ -70,7 +70,7 @@
                   (local-set-key
                    (kbd "<f7>")
                    'compile))))
- '(c-backslash-max-column 80)
+ '(c-backslash-max-column 96)
  '(c-basic-offset 4)
  '(c-cleanup-list
    '(brace-else-brace brace-elseif-brace empty-defun-braces defun-close-semi list-close-comma scope-operator compact-empty-funcall))
@@ -147,7 +147,7 @@
  '(ediff-use-faces nil)
  '(exec-path-from-shell-arguments nil)
  '(fast-but-imprecise-scrolling t)
- '(fill-column 90)
+ '(fill-column 96)
  '(fira-code-mode-disabled-ligatures
    '("[]" "x" "++" "--" "{-" "-}" "<>" "<-" "and" "or" "lambda"))
  '(font-use-system-font t)
