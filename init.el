@@ -61,15 +61,7 @@
  '(c++-font-lock-extra-types
    '("auto" "bit_vector" "const_iterator" "const_reference" "const_reverse_iterator" "(c|w|s|ws)match" "deque" "FILE" "forward_list" "fstream" "hash" "hash_map" "hash_multimap" "hash_multiset" "hash_set" "ifstream" "ios" "istream" "istreambuf" "istrstream" "iterator" "jmp_buf" "lconv" "list" "map" "multimap" "multiset" "ofstream" "ostream" "ostreambuf" "ostrstream" "priority_queue" "queue" "reference" "reverse_iterator" "set" "span" "stack" "string" "strstream" "strstreambuf" "\\sw+_t" "tm" "type_info" "va_list" "vector" "w?regex" "atomic_(bool|char|schar|uchar|short|ushort|int|uint|long|ulong|llong|ullong|char8_t|char16_t|char32_t|wchar_t|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|intptr_t|uintptr_t|size_t|ptrdiff_t|intmax_t|uintmax_t)"))
  '(c++-mode-hook
-   '(irony-mode company-mode company-ctags-auto-setup modern-c++-font-lock-mode hl-printf-mode
-                (lambda nil
-                  (local-set-key
-                   (kbd "<f6>")
-                   'cff-find-other-file))
-                (lambda nil
-                  (local-set-key
-                   (kbd "<f7>")
-                   'compile))))
+   '(irony-mode company-mode company-ctags-auto-setup modern-c++-font-lock-mode hl-printf-mode setup-programming-shortcuts))
  '(c-backslash-max-column 96)
  '(c-basic-offset 4)
  '(c-cleanup-list
@@ -102,15 +94,7 @@
  '(c-mode-common-hook
    '(whitespace-cleanup-mode c-toggle-hungry-state c-toggle-auto-newline highlight-numbers-mode highlight-operators-mode highlight-doxygen-mode hl-todo-mode))
  '(c-mode-hook
-   '(irony-mode company-mode company-ctags-auto-setup hl-printf-mode
-                (lambda nil
-                  (local-set-key
-                   (kbd "<f6>")
-                   'cff-find-other-file))
-                (lambda nil
-                  (local-set-key
-                   (kbd "<f7>")
-                   'compile))))
+   '(irony-mode company-mode company-ctags-auto-setup hl-printf-mode setup-programming-shortcuts))
  '(c-noise-macro-names '("ALWAYS_INLINE" "constexpr"))
  '(c-offsets-alist
    '((func-decl-cont . +)
@@ -131,7 +115,7 @@
    '(company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend))
  '(compilation-always-kill t)
  '(compilation-ask-about-save nil)
- '(compilation-mode-hook '((lambda nil (local-set-key (kbd "<f7>") 'compile))))
+ '(compilation-mode-hook '(setup-programming-shortcuts))
  '(compilation-read-command nil)
  '(compilation-scroll-output 'first-error)
  '(compile-command "make ")
@@ -170,7 +154,7 @@
  '(jit-lock-defer-time 0.2)
  '(js-switch-indent-offset 4)
  '(line-number-display-limit 5000)
- '(makefile-mode-hook '((lambda nil (local-set-key (kbd "<f7>") 'compile))))
+ '(makefile-mode-hook '(setup-programming-shortcuts))
  '(menu-bar-mode nil)
  '(modern-c++-types
    '("unsigned" "char32_t" "char16_t" "wchar_t" "char8_t" "signed" "double" "short" "float" "void" "long" "char" "bool" "int" "__int128" "__float128"))
@@ -219,7 +203,7 @@
         (kbd "DEL")
         nil))) t)
  '(python-shell-interpreter "python3")
- '(rebox-style-loop '(21 23 25 27 213 215 223 233 235 241 243))
+ '(rebox-style-loop '(235 23 25 27 213 215 223 233 241 243 21))
  '(rmsbolt-asm-format "att")
  '(rmsbolt-automatic-recompile 'on-save)
  '(rmsbolt-command "g++ -std=c++20")
@@ -285,7 +269,7 @@
 (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
 
 
-;; Shortcuts for splitting frames:
+;; Shortcuts for splitting and navigating frames:
 ;; - <super> + 0: close current view
 ;; - <super> + 1: close all but the current view
 ;; - <super> + o: create view below (horizontal split)
@@ -298,6 +282,12 @@
 (keymap-global-set "s-e" 'split-window-right)
 (keymap-global-set "s-5" 'delete-frame)
 (keymap-global-set "C-S-<iso-lefttab>" 'switch-prev-window)
+
+;; Shortcuts for switching buffers:
+;; - <ctrl> + <super> + <left>: previous buffer
+;; - <ctrl> + <super> + <right>: next buffer
+(keymap-global-set "C-s-<left>" 'switch-to-prev-buffer)
+(keymap-global-set "C-s-<right>" 'switch-to-next-buffer)
 
 
 (defun switch-prev-window ()
@@ -379,6 +369,13 @@
   (set-make-here)
 )
 
+;; Setup key bindings for programming buffers.
+(defun setup-programming-shortcuts ()
+  "Bind F6 and F7 keys for programming buffers."
+  (local-set-key (kbd "<f6>") 'cff-find-other-file)
+  (local-set-key (kbd "<f7>") 'compile)
+  (local-set-key (kbd "C-s-s") 'sort-lines)
+)
 
 ;; Set up irony-mode.
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
