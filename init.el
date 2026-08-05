@@ -283,6 +283,11 @@
 (keymap-global-set "s-5" 'delete-frame)
 (keymap-global-set "C-S-<iso-lefttab>" 'switch-prev-window)
 
+(defun switch-prev-window ()
+  (interactive)
+  (other-window -1))
+
+
 ;; Shortcuts for switching buffers:
 ;; - <ctrl> + <super> + <left>: previous buffer
 ;; - <ctrl> + <super> + <right>: next buffer
@@ -290,9 +295,8 @@
 (keymap-global-set "C-s-<right>" 'switch-to-next-buffer)
 
 
-(defun switch-prev-window ()
-  (interactive)
-  (other-window -1))
+;; Global shortcut for sorting lines: <ctrl> + <super> + s
+(keymap-global-set "C-s-s" 'sort-lines)
 
 
 ;; Functions to insert text from templates.
@@ -374,7 +378,6 @@
   "Bind F6 and F7 keys for programming buffers."
   (local-set-key (kbd "<f6>") 'cff-find-other-file)
   (local-set-key (kbd "<f7>") 'compile)
-  (local-set-key (kbd "C-s-s") 'sort-lines)
 )
 
 ;; Set up irony-mode.
