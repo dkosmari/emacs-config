@@ -57,6 +57,8 @@
               (default-value 'major-mode))
           (sh-mode)))))
  '(auto-insert-directory "~/.emacs.d/insert/")
+ '(blink-cursor-blinks 0)
+ '(blink-cursor-interval 0.25)
  '(buffers-menu-show-status nil)
  '(c++-font-lock-extra-types
    '("auto" "bit_vector" "const_iterator" "const_reference" "const_reverse_iterator" "(c|w|s|ws)match" "deque" "FILE" "forward_list" "fstream" "hash" "hash_map" "hash_multimap" "hash_multiset" "hash_set" "ifstream" "ios" "istream" "istreambuf" "istrstream" "iterator" "jmp_buf" "lconv" "list" "map" "multimap" "multiset" "ofstream" "ostream" "ostreambuf" "ostrstream" "priority_queue" "queue" "reference" "reverse_iterator" "set" "span" "stack" "string" "strstream" "strstreambuf" "\\sw+_t" "tm" "type_info" "va_list" "vector" "w?regex" "atomic_(bool|char|schar|uchar|short|ushort|int|uint|long|ulong|llong|ullong|char8_t|char16_t|char32_t|wchar_t|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|intptr_t|uintptr_t|size_t|ptrdiff_t|intmax_t|uintmax_t)"))
